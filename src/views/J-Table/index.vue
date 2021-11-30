@@ -1,10 +1,10 @@
 <!--
  * @Descriptions:
  * @Author: 这个Bug不予解决
- * @Date: 2021-11-29 14:57:41
+ * @Date: 2021-11-29 15:08:30
  * @LastEditors: 这个Bug不予解决
- * @LastEditTime: 2021-11-29 15:05:39
+ * @LastEditTime: 2021-11-29 15:09:51
 -->
 <template>
-  <router-view />
+  <div>1</div>
 </template>
