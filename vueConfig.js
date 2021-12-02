@@ -3,13 +3,13 @@
  * @Author: 这个Bug不予解决
  * @Date: 2021-11-29 15:11:36
  * @LastEditors: 这个Bug不予解决
- * @LastEditTime: 2021-11-29 15:17:13
+ * @LastEditTime: 2021-12-01 09:47:11
  */
 module.exports = {
   publicPath: './',
   outputDir: 'dist',
   assetsDir: '',
-  productionSourceMap: true,
+  productionSourceMap: false,
   // 调整内部的 webpack 配置。
   // 查阅 https://github.com/vuejs/vue-docs-zh-cn/blob/master/vue-cli/webpack.md
   chainWebpack: () => { },
