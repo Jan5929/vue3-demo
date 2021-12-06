@@ -3,7 +3,7 @@
  * @Author: 这个Bug不予解决
  * @Date: 2021-11-29 15:08:30
  * @LastEditors: 这个Bug不予解决
- * @LastEditTime: 2021-12-02 20:52:04
+ * @LastEditTime: 2021-12-06 15:52:28
 -->
 <template>
   <div class="J-table">
@@ -17,10 +17,10 @@
       </slot>
     </div>
     <el-table
+      v-Scroll:table
       :data="tableData"
       border
       style="width: 100%"
-      max-height="710"
       @selection-change="handleSelectChange"
       v-bind="tableProps"
     >
@@ -53,7 +53,7 @@
     <!-- 分页组件 -->
     <div v-if="showPagination" class="table-pagination">
       <slot name="pagination">
-        <J-pagination @getTableData="handleGetTableData" />
+        <J-pagination v-bind="$attrs" @getTableData="handleGetTableData" />
       </slot>
     </div>
   </div>
@@ -112,4 +112,7 @@ export default defineComponent({
 })
 </script>
 <style lang="less">
+.J-table {
+  padding: 20px;
+}
 </style>

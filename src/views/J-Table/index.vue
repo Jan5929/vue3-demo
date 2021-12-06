@@ -3,11 +3,16 @@
  * @Author: 这个Bug不予解决
  * @Date: 2021-11-29 15:08:30
  * @LastEditors: 这个Bug不予解决
- * @LastEditTime: 2021-12-01 17:11:36
+ * @LastEditTime: 2021-12-06 16:28:46
 -->
 <template>
   <div>
-    <J-table :table-column="tableColumn" showIndexColumn showSelectColumn>
+    <J-table
+      :table-column="tableColumn"
+      showIndexColumn
+      showSelectColumn
+      :httpParams="httpParams"
+    >
       <!-- 1.header中的插槽 -->
       <template #headerHandler>
         <J-button type="primary" size="mini" text="新建用户"></J-button>
@@ -28,7 +33,7 @@
   </div>
 </template>
 <script>
-import { defineComponent } from 'vue'
+import { defineComponent, reactive } from 'vue'
 import JTable from '../../components/J-Table'
 import { tableColumn } from './tableConfig.js'
 export default defineComponent({
@@ -36,10 +41,17 @@ export default defineComponent({
     JTable
   },
   setup (props, { emit }) {
+    const httpParams = reactive({
+      url: '/list',
+      data: {
+        name: 'J'
+      }
+    })
     const handleDelete = (row) => {
       // 删除逻辑
     }
     return {
+      httpParams,
       tableColumn,
       handleDelete
     }
@@ -52,7 +64,7 @@ export default defineComponent({
   .el-table {
     height: 100%;
     .el-table__body-wrapper {
-      height: calc(100% - 48px);
+      height: calc(100% - 66px);
     }
   }
 }
