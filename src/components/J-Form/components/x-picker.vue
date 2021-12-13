@@ -3,7 +3,7 @@
  * @Author: 这个Bug不予解决
  * @Date: 2021-12-07 16:07:35
  * @LastEditors: 这个Bug不予解决
- * @LastEditTime: 2021-12-07 17:27:08
+ * @LastEditTime: 2021-12-13 10:00:27
 -->
 <template>
   <el-date-picker
@@ -44,7 +44,7 @@ export default defineComponent({
       context.emit('formValue', {
         type: 'change',
         prop: prop.item.prop,
-        value: prop.formData[prop.item.prop]
+        value: JFormData[prop.item.prop]
       })
     }
     return {

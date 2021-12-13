@@ -3,7 +3,7 @@
  * @Author: 这个Bug不予解决
  * @Date: 2021-12-07 10:15:29
  * @LastEditors: 这个Bug不予解决
- * @LastEditTime: 2021-12-07 17:24:46
+ * @LastEditTime: 2021-12-13 09:45:04
 -->
 <template>
   <el-form
@@ -65,7 +65,6 @@ export default defineComponent({
   },
   props: {
     // 是否可拖拽排序
-    canDraggable: { type: Boolean, default: false },
     disabled: { type: Boolean, default: false },
     needToast: { type: Boolean, default: false },
     labelPosition: { type: String, default: 'right' },

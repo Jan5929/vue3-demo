@@ -3,7 +3,7 @@
  * @Author: 这个Bug不予解决
  * @Date: 2021-11-29 15:08:30
  * @LastEditors: 这个Bug不予解决
- * @LastEditTime: 2021-12-06 15:52:28
+ * @LastEditTime: 2021-12-11 19:38:15
 -->
 <template>
   <div class="J-table">
@@ -59,7 +59,7 @@
   </div>
 </template>
 <script>
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
 import JPagination from '../J-Pagination'
 export default defineComponent({
   components: {
@@ -91,22 +91,18 @@ export default defineComponent({
       default: true
     }
   },
-  data () {
-    return {
-      tableData: []
-    }
-  },
   setup (props, { emit }) {
+    const tableData = ref([])
     const handleSelectChange = (value) => {
+
     }
-    // 获取表格数据
+    const handleGetTableData = ({ list }) => {
+      tableData.value = list
+    }
     return {
-      handleSelectChange
-    }
-  },
-  methods: {
-    handleGetTableData (obj) {
-      this.tableData = obj.list
+      tableData,
+      handleSelectChange,
+      handleGetTableData
     }
   }
 })
